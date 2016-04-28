@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Meetup.h"
 
 @interface DetailViewController : UIViewController
+
+@property (strong, nonatomic) Meetup *meetup;
 
 @end

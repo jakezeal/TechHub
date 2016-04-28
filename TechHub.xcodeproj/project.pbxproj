@@ -7,27 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E205221A1CB6CDA000FABAA3 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E20522181CB6CDA000FABAA3 /* DataManager.m */; };
+		E205221D1CB6CE1300FABAA3 /* Meetup.m in Sources */ = {isa = PBXBuildFile; fileRef = E205221C1CB6CE1300FABAA3 /* Meetup.m */; };
+		E20522251CB6F74100FABAA3 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = E20522241CB6F74100FABAA3 /* NSDate+Utilities.m */; };
+		E205222F1CB7039C00FABAA3 /* MeetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E205222E1CB7039C00FABAA3 /* MeetupViewController.m */; };
+		E20522321CB7076D00FABAA3 /* MeetupCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E20522311CB7076D00FABAA3 /* MeetupCollectionViewCell.m */; };
 		E24F6B431CB6C40A0036483F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E24F6B421CB6C40A0036483F /* main.m */; };
 		E24F6B461CB6C40A0036483F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E24F6B451CB6C40A0036483F /* AppDelegate.m */; };
-		E24F6B491CB6C40A0036483F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24F6B481CB6C40A0036483F /* ViewController.m */; };
+		E24F6B491CB6C40A0036483F /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24F6B481CB6C40A0036483F /* SearchViewController.m */; };
 		E24F6B4C1CB6C40A0036483F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E24F6B4A1CB6C40A0036483F /* Main.storyboard */; };
 		E24F6B4F1CB6C40A0036483F /* TechHub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E24F6B4D1CB6C40A0036483F /* TechHub.xcdatamodeld */; };
 		E24F6B511CB6C40A0036483F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E24F6B501CB6C40A0036483F /* Assets.xcassets */; };
 		E24F6B541CB6C40B0036483F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E24F6B521CB6C40B0036483F /* LaunchScreen.storyboard */; };
+		E24F6B5D1CB6C66B0036483F /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E24F6B5C1CB6C66B0036483F /* SearchTableViewCell.m */; };
+		E24F6B631CB6C8BA0036483F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24F6B621CB6C8BA0036483F /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E20522181CB6CDA000FABAA3 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		E20522191CB6CDA000FABAA3 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		E205221B1CB6CE1300FABAA3 /* Meetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meetup.h; sourceTree = "<group>"; };
+		E205221C1CB6CE1300FABAA3 /* Meetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meetup.m; sourceTree = "<group>"; };
+		E20522231CB6F74100FABAA3 /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
+		E20522241CB6F74100FABAA3 /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
+		E205222D1CB7039C00FABAA3 /* MeetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetupViewController.h; sourceTree = "<group>"; };
+		E205222E1CB7039C00FABAA3 /* MeetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetupViewController.m; sourceTree = "<group>"; };
+		E20522301CB7076D00FABAA3 /* MeetupCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetupCollectionViewCell.h; sourceTree = "<group>"; };
+		E20522311CB7076D00FABAA3 /* MeetupCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetupCollectionViewCell.m; sourceTree = "<group>"; };
 		E24F6B3E1CB6C40A0036483F /* TechHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E24F6B421CB6C40A0036483F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E24F6B441CB6C40A0036483F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E24F6B451CB6C40A0036483F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E24F6B471CB6C40A0036483F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E24F6B481CB6C40A0036483F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E24F6B471CB6C40A0036483F /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		E24F6B481CB6C40A0036483F /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		E24F6B4B1CB6C40A0036483F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E24F6B4E1CB6C40A0036483F /* TechHub.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TechHub.xcdatamodel; sourceTree = "<group>"; };
 		E24F6B501CB6C40A0036483F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E24F6B531CB6C40B0036483F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E24F6B551CB6C40B0036483F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E24F6B5B1CB6C66B0036483F /* SearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewCell.h; sourceTree = "<group>"; };
+		E24F6B5C1CB6C66B0036483F /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
+		E24F6B611CB6C8BA0036483F /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		E24F6B621CB6C8BA0036483F /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +62,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E205221E1CB6CE1A00FABAA3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E205221B1CB6CE1300FABAA3 /* Meetup.h */,
+				E205221C1CB6CE1300FABAA3 /* Meetup.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E205221F1CB6D58000FABAA3 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E20522191CB6CDA000FABAA3 /* DataManager.h */,
+				E20522181CB6CDA000FABAA3 /* DataManager.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		E20522291CB6FCA700FABAA3 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				E205222D1CB7039C00FABAA3 /* MeetupViewController.h */,
+				E205222E1CB7039C00FABAA3 /* MeetupViewController.m */,
+				E20522301CB7076D00FABAA3 /* MeetupCollectionViewCell.h */,
+				E20522311CB7076D00FABAA3 /* MeetupCollectionViewCell.m */,
+			);
+			name = Welcome;
+			sourceTree = "<group>";
+		};
 		E24F6B351CB6C40A0036483F = {
 			isa = PBXGroup;
 			children = (
@@ -62,13 +112,12 @@
 			children = (
 				E24F6B441CB6C40A0036483F /* AppDelegate.h */,
 				E24F6B451CB6C40A0036483F /* AppDelegate.m */,
-				E24F6B471CB6C40A0036483F /* ViewController.h */,
-				E24F6B481CB6C40A0036483F /* ViewController.m */,
-				E24F6B4A1CB6C40A0036483F /* Main.storyboard */,
-				E24F6B501CB6C40A0036483F /* Assets.xcassets */,
-				E24F6B521CB6C40B0036483F /* LaunchScreen.storyboard */,
-				E24F6B551CB6C40B0036483F /* Info.plist */,
-				E24F6B4D1CB6C40A0036483F /* TechHub.xcdatamodeld */,
+				E20522291CB6FCA700FABAA3 /* Welcome */,
+				E24F6B5E1CB6C88C0036483F /* Search */,
+				E24F6B5F1CB6C8920036483F /* Detail */,
+				E24F6B601CB6C8A10036483F /* Favourites */,
+				E205221F1CB6D58000FABAA3 /* API */,
+				E205221E1CB6CE1A00FABAA3 /* Model */,
 				E24F6B411CB6C40A0036483F /* Supporting Files */,
 			);
 			path = TechHub;
@@ -77,9 +126,43 @@
 		E24F6B411CB6C40A0036483F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E20522231CB6F74100FABAA3 /* NSDate+Utilities.h */,
+				E20522241CB6F74100FABAA3 /* NSDate+Utilities.m */,
+				E24F6B4A1CB6C40A0036483F /* Main.storyboard */,
+				E24F6B501CB6C40A0036483F /* Assets.xcassets */,
+				E24F6B521CB6C40B0036483F /* LaunchScreen.storyboard */,
+				E24F6B551CB6C40B0036483F /* Info.plist */,
+				E24F6B4D1CB6C40A0036483F /* TechHub.xcdatamodeld */,
 				E24F6B421CB6C40A0036483F /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E24F6B5E1CB6C88C0036483F /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				E24F6B5B1CB6C66B0036483F /* SearchTableViewCell.h */,
+				E24F6B5C1CB6C66B0036483F /* SearchTableViewCell.m */,
+				E24F6B471CB6C40A0036483F /* SearchViewController.h */,
+				E24F6B481CB6C40A0036483F /* SearchViewController.m */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		E24F6B5F1CB6C8920036483F /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E24F6B611CB6C8BA0036483F /* DetailViewController.h */,
+				E24F6B621CB6C8BA0036483F /* DetailViewController.m */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
+		E24F6B601CB6C8A10036483F /* Favourites */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Favourites;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,10 +236,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E24F6B491CB6C40A0036483F /* ViewController.m in Sources */,
+				E205222F1CB7039C00FABAA3 /* MeetupViewController.m in Sources */,
+				E24F6B491CB6C40A0036483F /* SearchViewController.m in Sources */,
+				E20522321CB7076D00FABAA3 /* MeetupCollectionViewCell.m in Sources */,
 				E24F6B461CB6C40A0036483F /* AppDelegate.m in Sources */,
+				E205221A1CB6CDA000FABAA3 /* DataManager.m in Sources */,
+				E205221D1CB6CE1300FABAA3 /* Meetup.m in Sources */,
+				E20522251CB6F74100FABAA3 /* NSDate+Utilities.m in Sources */,
 				E24F6B431CB6C40A0036483F /* main.m in Sources */,
 				E24F6B4F1CB6C40A0036483F /* TechHub.xcdatamodeld in Sources */,
+				E24F6B5D1CB6C66B0036483F /* SearchTableViewCell.m in Sources */,
+				E24F6B631CB6C8BA0036483F /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +395,7 @@
 				E24F6B5A1CB6C40B0036483F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

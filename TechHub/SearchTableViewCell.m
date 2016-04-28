@@ -12,13 +12,11 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    [self.favouriteButton addTarget:self action:@selector(favouritePressed) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)favouritePressed {
+    [self.delegate favouriteButtonPressed:self];
 }
 
 @end

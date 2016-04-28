@@ -7,45 +7,42 @@
 //
 
 #import "DataManager.h"
-#import "LocationManager.h"
 #import "Meetup.h"
-#import "AppDelegate.h"
-#import "TransientMeetup.h"
-
-@interface DataManager () <DataManagerDelegate>
-
-@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
-
-@end
 
 @implementation DataManager
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
-        AppDelegate *del = (AppDelegate *) [UIApplication sharedApplication].delegate;
-        self.managedObjectContext = del.managedObjectContext;
-        
+        self.favourites = [[NSMutableArray alloc] init]; 
     }
     return self;
 }
 
-- (void)createQueryString:(CLLocationCoordinate2D)coordinate {
++ (id)sharedManager {
+    static DataManager *sharedManager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedManager = [[self alloc] init];
+    });
+    return sharedManager;
+}
+
+- (NSURL *)queryString { // Coordinate should be passed in the future.
     NSString *baseURL = @"https://api.meetup.com/2/open_events";
     NSURLComponents *components = [NSURLComponents componentsWithString:baseURL];
     NSURLQueryItem *queryAPI = [NSURLQueryItem queryItemWithName:@"key" value:@"345431657b2d20632d47254d28455224"];
-    NSURLQueryItem *querysign = [NSURLQueryItem queryItemWithName:@"sign" value:@"true"];
-    NSURLQueryItem *querycategory = [NSURLQueryItem queryItemWithName:@"category" value:@"34"];
-    NSURLQueryItem *queryLat = [NSURLQueryItem queryItemWithName:@"lat" value:[@(coordinate.latitude) stringValue]];
-    NSURLQueryItem *queryLon = [NSURLQueryItem queryItemWithName:@"lon" value:[@(coordinate.longitude) stringValue]];
-    [components setQueryItems:@[queryAPI, querysign, querycategory, queryLat, queryLon]];
-    self.url = components.URL;
-    [self fetchData];
+    NSURLQueryItem *querySign = [NSURLQueryItem queryItemWithName:@"sign" value:@"true"];
+    NSURLQueryItem *queryCategory = [NSURLQueryItem queryItemWithName:@"category" value:@"34"];
+    NSURLQueryItem *queryLat = [NSURLQueryItem queryItemWithName:@"lat" value:[@(40.759211) stringValue]]; // Needs to be dynamic location
+    NSURLQueryItem *queryLon = [NSURLQueryItem queryItemWithName:@"lon" value:[@(-73.984638) stringValue]];
+    NSURLQueryItem *queryPage = [NSURLQueryItem queryItemWithName:@"page" value:@"40"];
+    [components setQueryItems:@[queryAPI, querySign, queryCategory, queryLat, queryLon, queryPage]];
+    return components.URL;
 }
 
-- (void)fetchData {
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:self.url];
+- (void)loadMeetups:(void(^)(NSArray *meetups))completion {
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[self queryString]];
     NSURLSession *session = [NSURLSession sharedSession];
     
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
@@ -58,47 +55,32 @@
             if (!jsonError) {
                 NSMutableArray *objects = [[NSMutableArray alloc]init];
                 NSArray *meetupArray = jsonObject[@"results"];
+                NSMutableArray *arrayOfTitles = [[NSMutableArray alloc]init];
                 
                 for (NSDictionary *meetupDict in meetupArray) {
-                    //Save to array in normal NSObject
-                    TransientMeetup *meetup = [[TransientMeetup alloc]init];
                     
+                    if ([meetupArray containsObject:arrayOfTitles.lastObject]) {
+                        continue;
+                    }
+                    Meetup *meetup = [[Meetup alloc]init];
                     meetup.identifier = meetupDict[@"id"];
-                    meetup.eventName = meetupDict[@"venue"][@"name"];
-                    meetup.location = meetupDict[@"venue"][@"address_1"];
+                    meetup.eventName = meetupDict[@"name"];
+                    [arrayOfTitles addObject:meetup.eventName];
+                    meetup.eventLocation = meetupDict[@"venue"][@"address_1"];
                     meetup.city = meetupDict[@"venue"][@"city"];
-                    meetup.meetupDescription = meetupDict[@"description"];
-                    meetup.yesRsvpCount = meetupDict[@"yes_rsvp_count"];
-                    meetup.time = meetupDict[@"time"];
-                    meetup.duration = meetupDict[@"duration"];
-                    meetup.groupName = meetupDict[@"group"][@"name"];
+                    meetup.eventDescription = meetupDict[@"description"];
+                    meetup.eventTime = meetupDict[@"time"];
+                    meetup.eventHost = meetupDict[@"group"][@"name"];
+                    meetup.eventURL = meetupDict[@"event_url"];
                     [objects addObject:meetup];
                 }
-                self.meetups = objects;
-                
-                [self.delegate didUpdateData];
+                completion(objects);
             }
         } else {
             NSLog(@"There was an error: %@ \n", error.localizedDescription);
         }
     }];
     [dataTask resume];
-}
-
-- (void)fetchFavorites {
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Meetup" inManagedObjectContext:self.managedObjectContext];
-    [fetchRequest setEntity:entity];
-    NSError *error = nil;
-    NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    if (fetchedObjects == nil) {
-        NSLog(@"%@", error.localizedDescription);
-    }
-    NSMutableDictionary *dict = [[NSMutableDictionary alloc]init];
-    for (Meetup *meetup in fetchedObjects) {
-        dict[meetup.identifier] = meetup;
-    }
-    _dictionary = dict;
 }
 
 @end

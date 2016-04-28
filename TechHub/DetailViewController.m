@@ -7,8 +7,16 @@
 //
 
 #import "DetailViewController.h"
+#import "DataManager.h"
 
 @interface DetailViewController ()
+
+@property (weak, nonatomic) IBOutlet UILabel *eventName;
+@property (weak, nonatomic) IBOutlet UILabel *eventHost;
+@property (weak, nonatomic) IBOutlet UILabel *eventDescription;
+@property (weak, nonatomic) IBOutlet UILabel *eventLocation;
+@property (weak, nonatomic) IBOutlet UILabel *eventTime;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
 
@@ -16,22 +24,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+//    self.eventName.text = self.meetup.eventName;
+//    self.eventHost.text = self.meetup.eventHost;
+//    self.eventDescription.text = self.meetup.eventDescription;
+//    self.eventLocation.text = self.meetup.eventLocation;
+//    self.eventTime.text = [self.meetup.eventTime stringValue];
+    [self prepareWebView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+#pragma mark - Preperations
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)prepareWebView {
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.meetup.eventURL]];
+    [self.webView loadRequest:request];
 }
-*/
 
 @end

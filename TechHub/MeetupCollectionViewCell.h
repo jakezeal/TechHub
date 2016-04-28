@@ -10,4 +10,9 @@
 
 @interface MeetupCollectionViewCell : UICollectionViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *eventName;
+@property (weak, nonatomic) IBOutlet UILabel *eventHost;
+@property (weak, nonatomic) IBOutlet UILabel *eventLocation;
+@property (weak, nonatomic) IBOutlet UILabel *eventTime;
+
 @end
